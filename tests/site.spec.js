@@ -16,7 +16,7 @@ test('both languages fit the viewport and persist',async({page})=>{
 test('physical models, pause, and keyboard rotation work without a GPU',async({page})=>{
  await visit(page);const workshop=page.locator('.workshop');
  for(const id of ['robot','gate','greenhouse']){
-  await page.locator('[data-model="'+id+'"]').click();await expect(workshop).toHaveAttribute('data-model',id);
+  await page.locator('button[data-model="'+id+'"]').click();await expect(workshop).toHaveAttribute('data-model',id);
   await expect(page.locator('.model-fallback svg')).toBeVisible();await page.locator('.model-action').click();await expect(workshop).toHaveAttribute('data-action','true');
  }
  const before=await page.locator('.model-fallback').innerHTML();await page.locator('.model-surface').press('ArrowLeft');
@@ -51,5 +51,5 @@ test('optional GPU renderer initializes on a WebGL2-capable runner',async({page}
  await page.goto('/?lang=en');const supported=await page.evaluate(()=>!!document.createElement('canvas').getContext('webgl2'));
  test.skip(!supported,'This runner has no WebGL2; SVG behavior is tested separately');
  await expect(page.locator('.workshop')).toHaveAttribute('data-renderer','webgl',{timeout:25000});
- await page.locator('[data-model="gate"]').click();await page.locator('.model-action').click();await page.screenshot({path:testInfo.outputPath('05-webgl-scene.png')});
+ await page.locator('button[data-model="gate"]').click();await page.locator('.model-action').click();await page.screenshot({path:testInfo.outputPath('05-webgl-scene.png')});
 });
