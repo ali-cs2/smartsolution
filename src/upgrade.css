@@ -1,0 +1,138 @@
+
+/* V2: shared light palette, transparent vector branding, tangible model workshop. */
+html{overflow-x:clip;scroll-padding-top:110px}
+body{overflow-x:clip}
+main{overflow:clip}
+button,a,input,textarea,select{touch-action:manipulation}
+.hero-layout{grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);gap:36px;min-height:780px}
+.hero-copy,.hero-art,.solution-workspace>*{min-width:0}
+.brand-logo{width:180px;height:66px;overflow:visible}
+.brand-logo img{position:static;display:block;width:100%;height:100%;object-fit:contain;mix-blend-mode:normal}
+.nav-actions{gap:18px}
+.language,.menu{min-width:44px;min-height:44px;justify-content:center}
+.hero h1{font-size:clamp(54px,5.8vw,88px)}
+html[lang=ar] .hero h1{font-size:clamp(46px,5.2vw,77px)}
+.hero-foot{margin-top:42px}
+.hero-art.workshop{height:620px;margin:0;background:#071c36;border:1px solid #183753;border-radius:22px;box-shadow:0 26px 70px #163c6214;overflow:hidden;color:#ecf6ff;direction:ltr}
+.workshop:before{background:radial-gradient(ellipse at 55% 35%,#07518c70,transparent 65%);z-index:0;pointer-events:none}
+.workshop .scene-grid{inset:0;background-size:36px 36px;background-image:linear-gradient(#77c7ff09 1px,transparent 1px),linear-gradient(90deg,#77c7ff09 1px,transparent 1px);mask-image:radial-gradient(ellipse,#0008,transparent 75%);pointer-events:none}
+.workshop .scene-meta{top:24px;inset-inline:24px;color:#9fb9d1;font-size:9px;letter-spacing:1.2px;z-index:2;pointer-events:none}
+.workshop .scene-meta i{background:#3fceff}
+.model-surface{position:absolute;inset:50px 0 173px;touch-action:pan-y;cursor:grab;border-radius:12px;outline-offset:-5px!important}
+.model-surface:active{cursor:grabbing}
+.model-fallback,.model-surface canvas{position:absolute;inset:0;width:100%;height:100%}
+.model-svg{display:block;width:100%;height:100%;overflow:visible}
+.model-fallback{transition:opacity .4s}
+.workshop.webgl-ready canvas{opacity:1}
+.workshop.webgl-ready .model-fallback{opacity:0;pointer-events:none}
+.model-caption{position:absolute;bottom:148px;left:24px;right:24px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px;direction:inherit}
+html[lang=ar] .model-name{direction:rtl}
+.model-live{font:9px 'Manrope Variable',sans-serif;color:#8fb4d2;letter-spacing:1.3px;display:flex;gap:7px;align-items:center}
+.model-live i{width:5px;height:5px;display:block;border-radius:50%;background:#3fceff}
+.model-tabs{position:absolute;bottom:95px;left:22px;right:22px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;padding:4px;border:1px solid #284660;border-radius:9px;background:#05172b}
+.model-tabs button{border:0;border-radius:6px;background:none;color:#adc4d9;font-size:11px;line-height:1.6;min-height:39px;padding:8px 4px}
+.model-tabs button[aria-pressed=true]{background:#1e4d75;color:#fff;box-shadow:inset 0 0 0 1px #3687bb}
+.model-controls{position:absolute;left:24px;right:24px;bottom:42px;display:flex;gap:8px}
+.model-action{border:1px solid #229ce5;border-radius:6px;background:#0874be;color:#fff;padding:7px 15px;min-height:40px;font-size:11px;flex:1;text-align:center}
+.model-action[aria-pressed=true]{background:#0c3859}
+.model-reset,.workshop .motion{border:1px solid #365874;background:#102c45;color:#d3e9fa;min-width:42px;height:40px;border-radius:6px;font-size:20px;display:grid;place-items:center}
+.workshop .motion{font-size:15px}
+.model-hint{position:absolute;bottom:14px;left:18px;right:18px;text-align:center;color:#a0b8ce;font-size:9px;line-height:1.5;pointer-events:none}
+.solution-workspace{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr)}
+.solution-panel>.model-svg{min-height:280px;max-height:330px;margin:0 auto}
+.service-tabs{min-width:0}
+.service-tab{min-height:64px}
+.panel-copy p{font-size:14px}
+.chips span{font-size:11px}
+.kicker{font-size:11px}
+.concepts{border-top:1px solid #dce4ed}
+.concept-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.concept-card{border:1px solid #d8e4ee;background:#fff;border-radius:14px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.concept-card:hover{transform:translateY(-5px);box-shadow:0 18px 40px #1038580d}
+.concept-art{height:224px;overflow:hidden;background:radial-gradient(ellipse at 50% 50%,#124775,#071c36 75%)}
+.concept-art .model-svg{height:100%;width:100%}
+.concept-copy{padding:24px}
+.concept-index{font:9px 'Manrope Variable',sans-serif;letter-spacing:1.5px;color:#637c94;direction:ltr;display:block}
+.concept-copy h3{font-weight:600;font-size:21px;line-height:1.6;margin:12px 0 8px}
+.concept-copy p{font-size:12px;line-height:1.9;color:#61768e;min-height:48px}
+.concept-open{display:flex;justify-content:space-between;align-items:center;gap:18px;width:100%;border:0;border-top:1px solid #e0e8ef;background:none;padding:16px 0 0;margin-top:22px;text-align:start;font-size:12px;font-weight:600;min-height:44px;color:#006bbb}
+.concept-open span{font-size:22px}
+.reveal{opacity:1;transform:none}
+.motion-ready .reveal:not(.visible){opacity:0;transform:translateY(22px)}
+.footer-end,footer p{font-size:11px}
+.dialog-inner .privacy{font-size:11px}
+dialog{overscroll-behavior:contain}
+dialog .close{min-width:44px;min-height:44px}
+@media(max-width:1100px){
+ .hero-layout{gap:25px;min-height:710px}
+ .hero-art.workshop{height:580px}
+ .hero h1{font-size:clamp(44px,5.6vw,65px)}
+ html[lang=ar] .hero h1{font-size:clamp(43px,5.2vw,60px)}
+ nav{gap:20px}
+ .nav-wrap{gap:18px}
+ .concept-copy{padding:18px}
+ .concept-copy h3{font-size:18px}
+ .concept-art{height:195px}
+}
+@media(max-width:900px) and (min-width:761px){
+ .brand-logo{width:148px}
+ nav{gap:14px;font-size:11px}
+ .nav-actions{gap:9px}
+ .small{padding:10px 12px;font-size:10px;gap:9px}
+ .hero-layout{gap:22px}
+ .hero-art.workshop{height:550px}
+ .model-caption{left:18px;right:18px}
+ .model-tabs{left:15px;right:15px}
+ .model-tabs button{font-size:10px}
+}
+@media(max-width:760px){
+ html{scroll-padding-top:88px}
+ .nav-wrap{gap:12px}
+ .brand-logo{width:142px;height:54px}
+ .nav-actions{gap:12px}
+ .menu{padding:8px}
+ .hero-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:30px;min-height:0;padding-block:38px 30px}
+ .hero-copy{max-width:none}
+ .hero h1{font-size:clamp(44px,9.1vw,65px);line-height:1.12}
+ html[lang=ar] .hero h1{font-size:clamp(42px,8.7vw,61px);line-height:1.45}
+ .hero-copy>p{font-size:14px;max-width:100%}
+ .hero-foot{margin-top:25px;font-size:10px}
+ .hero-art.workshop{height:520px;width:100%;max-width:none;margin:0;border-radius:15px}
+ .model-surface{inset:43px 0 173px}
+ .model-caption{font-size:13px;left:19px;right:19px}
+ .workshop .scene-meta{inset-inline:18px;font-size:8px;top:20px}
+ .model-tabs{left:15px;right:15px}
+ .model-tabs button{font-size:10px;min-height:42px}
+ .model-controls{left:19px;right:19px}
+ .model-action{min-height:42px}
+ .model-hint{font-size:8px}
+ .solution-workspace{grid-template-columns:minmax(0,1fr)}
+ .service-tabs{width:100%;max-width:100%;overscroll-behavior-x:contain;scroll-padding-inline:15px}
+ .service-tab{min-height:44px}
+ .solution-panel{padding:22px;min-height:450px}
+ .solution-panel>.model-svg{min-height:245px;max-height:290px}
+ .section-heading{margin-bottom:30px}
+ .concept-grid{grid-template-columns:minmax(0,1fr);gap:23px}
+ .concept-art{height:240px}
+ .concept-copy{padding:23px}
+ .concept-copy h3{font-size:23px}
+ .concept-copy p{min-height:0;font-size:13px}
+ .about-grid{gap:27px;grid-template-columns:minmax(0,1fr)}
+ .footer-end{gap:18px;line-height:1.9}
+}
+@media(max-width:360px){
+ .hero-art.workshop{height:490px}
+ .model-name{font-size:12px}
+ .model-live{font-size:8px}
+ .model-tabs button{font-size:9px}
+ .brand-logo{width:127px}
+ .nav-actions{gap:8px}
+ .hero h1{font-size:42px}
+ html[lang=ar] .hero h1{font-size:40px}
+ .section-heading h2,.about h2{font-size:30px}
+ .contact-content h2{font-size:37px}
+}
+@media(prefers-reduced-motion:reduce){
+ .motion-ready .reveal:not(.visible){opacity:1;transform:none}
+ .concept-card:hover{transform:none}
+}

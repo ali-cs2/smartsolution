@@ -1,0 +1,38 @@
+
+name: Website quality
+on:
+  push:
+    branches: [main, feat/interactive-workshop]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  website:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Check model geometry and behavior
+        run: node --test scripts/models.test.mjs
+      - name: Build production bundle
+        run: npm run build
+      - name: Install browser test runner
+        run: npm install --no-save --package-lock=false @playwright/test@1.56.1
+      - name: Install browser engines
+        run: npx playwright install --with-deps chromium firefox webkit
+      - name: Check responsive layouts and interactions
+        run: npx playwright test
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: website-review
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 14

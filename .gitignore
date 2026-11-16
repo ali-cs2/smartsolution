@@ -4,3 +4,5 @@ dist/
 .env*
 !.env.example
 .openai/
+playwright-report/
+test-results/
