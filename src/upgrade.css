@@ -30,7 +30,7 @@ html[lang=ar] .model-name{direction:rtl}
 .model-live{font:9px 'Manrope Variable',sans-serif;color:#8fb4d2;letter-spacing:1.3px;display:flex;gap:7px;align-items:center}
 .model-live i{width:5px;height:5px;display:block;border-radius:50%;background:#3fceff}
 .model-tabs{position:absolute;bottom:95px;left:22px;right:22px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;padding:4px;border:1px solid #284660;border-radius:9px;background:#05172b}
-.model-tabs button{border:0;border-radius:6px;background:none;color:#adc4d9;font-size:11px;line-height:1.6;min-height:39px;padding:8px 4px}
+.model-tabs button{border:0;border-radius:6px;background:none;color:#adc4d9;font-size:11px;line-height:1.6;min-height:44px;padding:8px 4px}
 .model-tabs button[aria-pressed=true]{background:#1e4d75;color:#fff;box-shadow:inset 0 0 0 1px #3687bb}
 .model-controls{position:absolute;left:24px;right:24px;bottom:42px;display:flex;gap:8px}
 .model-action{border:1px solid #229ce5;border-radius:6px;background:#0874be;color:#fff;padding:7px 15px;min-height:40px;font-size:11px;flex:1;text-align:center}
@@ -102,9 +102,9 @@ dialog .close{min-width:44px;min-height:44px}
  .model-caption{font-size:13px;left:19px;right:19px}
  .workshop .scene-meta{inset-inline:18px;font-size:8px;top:20px}
  .model-tabs{left:15px;right:15px}
- .model-tabs button{font-size:10px;min-height:42px}
+ .model-tabs button{font-size:10px;min-height:44px}
  .model-controls{left:19px;right:19px}
- .model-action{min-height:42px}
+ .model-action{min-height:44px}
  .model-hint{font-size:8px}
  .solution-workspace{grid-template-columns:minmax(0,1fr)}
  .service-tabs{width:100%;max-width:100%;overscroll-behavior-x:contain;scroll-padding-inline:15px}

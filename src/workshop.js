@@ -25,7 +25,7 @@ export function mountWorkshop(root,{locale='ar',paused=false,onPaused=()=>{}}={}
   raf=0;if(disposed||!visible||document.hidden){last=0;return}
   const dt=last?Math.min((now-last)/1000,.05):1/30;last=now;if(!paused)time+=dt;
   const yaw=manualYaw+(!paused?Math.sin(time*.23)*.10:0);
-  if(adapter){try{adapter.render(model,modelPose(model.kind,time,action),yaw,paused?1:dt);dirty=false}catch{adapter.dispose();adapter=null;root.classList.remove('webgl-ready');sync();dirty=true;wake()}}
+  if(adapter){try{adapter.render(model,modelPose(model.kind,time,action),yaw,paused?1:dt);dirty=false}catch{adapter.dispose();adapter=null;root.classList.remove('webgl-ready');sync();fallback.innerHTML=renderModelSVG(model,{yaw,time,action});dirty=false}}
   else if(dirty||(!paused&&now-lastSVG>1000/(model.kind==='greenhouse'?8:12))){
    fallback.innerHTML=renderModelSVG(model,{yaw,time,action});lastSVG=now;dirty=false;
   }
